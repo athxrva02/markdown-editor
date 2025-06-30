@@ -1,4 +1,4 @@
-package com.example.markdowneditor.dto;
+package com.example.markdowneditor.dto.response;
 
 import com.example.markdowneditor.enums.ResponseStatus;
 import lombok.AllArgsConstructor;
