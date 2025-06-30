@@ -6,6 +6,7 @@ import com.example.markdowneditor.enums.ResponseStatus;
 import com.example.markdowneditor.service.NotesService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.ThreadContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController("notes")
 public class NotesController {
 
-    private NotesService notesService;
+    private final NotesService notesService;
+
+    @Autowired
+    public NotesController(NotesService notesService) {
+        this.notesService = notesService;
+    }
 
     public CommonResponse createNote(@RequestBody CreateNoteReqDTO createNoteReqDTO) {
         ThreadContext.put("API", "createNote");
