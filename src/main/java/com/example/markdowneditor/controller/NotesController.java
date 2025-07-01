@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@RestController("/notes")
+@RestController("notes")
 public class NotesController {
 
     private final NotesService notesService;
