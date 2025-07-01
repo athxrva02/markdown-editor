@@ -1,11 +1,15 @@
 package com.example.markdowneditor.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity(name = "Note")
 @Data
@@ -23,8 +27,8 @@ public class Note {
     private String content;
 
     @Column(name = "created_date")
-    private Date createdDate;
+    private Timestamp createdDate;
 
     @Column(name = "updated_date")
-    private Date updatedDate;
+    private Timestamp updatedDate;
 }
